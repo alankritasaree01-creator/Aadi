@@ -141,8 +141,41 @@
     }
 
     @media (max-width: 640px) {
-      .hero-content { padding: 0 28px 60px; }
-      .hero-scroll   { display: none; }
+      .hero {
+        height: 100svh; /* use small viewport height on mobile to avoid address bar issues */
+      }
+
+      .hero-photo-img {
+        object-position: 38% top; /* shift left so subject face/body stays centered */
+      }
+
+      .hero-content {
+        padding: 0 24px 48px;
+      }
+
+      .hero-headline {
+        font-size: 52px;
+        margin-bottom: 12px;
+      }
+
+      .hero-subtext {
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        line-height: 1.5;
+        max-width: 260px;  /* prevent awkward narrow wrapping */
+        margin-bottom: 28px;
+      }
+
+      /* Constrain button — don't let it stretch full width */
+      .hero-content .btn,
+      .hero-content .btn-outline-ivory {
+        display: inline-block;
+        width: auto;
+        padding: 12px 28px;
+        font-size: 11px;
+      }
+
+      .hero-scroll { display: none; }
     }
   </style>
 </head>
